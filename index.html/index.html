@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            height: 60vh;
+            margin-top: 10px;
+        }
+
+        .left-half {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 20px 0px 0px 20px;
+            box-shadow: black 0px 0px 2px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .right-half {
+            flex: 1;
+            background-color: #1b7af740;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0px 20px 20px 0px;
+            box-shadow: black 0px 0px 2px;
+        }
+
+        .profile-photo {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: cover;
+            border-radius: 0px 20px 20px 0px;
+            border: #00376a60 solid 10px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment:fixed;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: #777;
+        }
+        .srch {
+            padding-top: 50px;
+            color: rgb(2, 32, 7);
+          }
+          
+          #form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          
+          #search {
+            padding: 15px;
+            border-top-left-radius: 30px;
+            border-bottom-right-radius: 0px;
+            border-top-right-radius: 0px;
+            border: none;
+            font-family: inherit;
+            box-shadow: 0 4px 10px rgba(0.1, 0.1, 0.1, 0.5);
+            min-width: 300px;
+            font-size: 1rem;
+            background-color: rgba(233, 150, 122, 0.692);
+            color: black;
+            border: salmon solid 2px;
+            flex: 1;
+          }
+          
+          #form button {
+            background-color: #386c3671;
+            color: #fff;
+            border: none;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 0px;
+            border-top-left-radius: 0px;
+            border-bottom-right-radius: 6px;
+            padding: 15px 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0.1, 0.1, 0.1, 0.5);
+            font-size: 1rem;
+            transition: background-color 0.3s ease-in-out;
+            border: rgb(94, 128, 94) solid 2px;
+          }
+          .navbar {
+            border-radius: 40px 10px 10px 40px;
+            margin-top: 5px;
+            margin-left: 80px;
+            margin-right: 80px;
+            border-left: #1156a5 solid 10px;
+            border-top: #2da8eb solid 2px;
+            border-bottom: #2da8eb solid 2px;
+            border-right: #0fc4e8 solid 2px;
+            box-shadow: black 0px 0px 2px;
+        }        
+          
+          .navbar-brand h2 {
+            margin: 0;
+            font-size: 1.5rem;
+          }
+          
+          .navbar-nav .nav-link.active {
+            font-weight: bold;
+            color: #007bff;
+          }
+          .h1{
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color:rgba(11, 156, 213, 0.968);
+            text-shadow: #032e86 0px 0px 2px;
+            font-weight: 600;
+          }
+          h2{
+            margin: 20px;
+          }
+          .ab{
+            margin-top: 20px;
+            margin-left: 60px;
+            margin-right: 60px;
+            border-radius: 5px 5px 50px 50px;
+            text-align: center;
+            background-color: #effaff;
+            border-bottom: #0a3760c6 solid 2px;
+          }
+          .abh{
+            font-family:'Courier New', Courier, monospace;
+            margin:10px;
+            color: #020b1c;
+          }
+          .deco12{
+            float:left;
+            background-color: #00fbffac;
+            max-width:60px;
+            max-height: 60px;
+            min-height: 100px;
+            min-width:50px;
+            border-radius: 0px 100px 100px 0px;
+            border-top: rgba(9, 84, 63, 0.646) solid 5px;
+            border-right: rgba(9, 84, 63, 0.646) solid 5px;
+            border-bottom: rgba(9, 84, 63, 0.646) solid 5px;
+          }
+          .deco12:hover{
+            float:left;
+            background-color: #00ffb3;
+            max-width:60px;
+            max-height: 60px;
+            min-height: 100px;
+            min-width:50px;
+            border-radius: 0px 100px 100px 0px;
+            border-top: rgba(9, 84, 63) solid 5px;
+            border-right: rgba(9, 84, 63) solid 5px;
+            border-bottom: rgba(9, 84, 63) solid 5px;
+          }
+          .deco22{
+            float:right;
+            background-color: #00ffdd99;
+            max-width:60px;
+            max-height: 60px;
+            min-height: 100px;
+            min-width:50px;
+            border-radius: 100px 0px 0px 100px;
+            border-top: rgba(9, 84, 63, 0.646) solid 5px;
+            border-left: rgba(9, 84, 63, 0.646) solid 5px;
+            border-bottom: rgba(9, 84, 63, 0.646) solid 5px;
+          }
+          .deco22:hover{
+            float:right;
+            background-color: #00ffae;
+            max-width:60px;
+            max-height: 60px;
+            min-height: 100px;
+            min-width:50px;
+            border-radius: 100px 0px 0px 100px;
+            border-top: rgb(9, 84, 63) solid 5px;
+            border-left: rgb(9, 84, 63) solid 5px;
+            border-bottom: rgba(9, 84, 63) solid 5px;
+          }
+          .deco1{
+            float:left;
+            background-color: #00aaffac;
+            max-width:60px;
+            max-height: 60px;
+            min-height: 100px;
+            min-width:50px;
+            border-radius: 0px 100px 100px 0px;
+            border-top: rgba(32, 85, 175, 0.646) solid 5px;
+            border-right: rgba(32, 85, 175, 0.646) solid 5px;
+            border-bottom: rgba(32, 85, 175, 0.646) solid 5px;
+          }
+          .deco1:hover{
+            float:left;
+            background-color: #00f7ff;
+            max-width:60px;
+            max-height: 60px;
+            min-height: 100px;
+            min-width:50px;
+            border-radius: 0px 100px 100px 0px;
+            border-top: rgb(32, 84, 175) solid 5px;
+            border-right: rgb(32, 84, 175) solid 5px;
+            border-bottom: rgb(32, 84, 175) solid 5px;
+          }
+          .deco2{
+            float:right;
+            background-color: #00aaff99;
+            max-width:60px;
+            max-height: 60px;
+            min-height: 100px;
+            min-width:50px;
+            border-radius: 100px 0px 0px 100px;
+            border-top: rgba(32, 85, 175, 0.646) solid 5px;
+            border-left: rgba(32, 85, 175, 0.646) solid 5px;
+            border-bottom: rgba(32, 85, 175, 0.646) solid 5px;
+          }
+          .deco2:hover{
+            float:right;
+            background-color: #00f7ff;
+            max-width:60px;
+            max-height: 60px;
+            min-height: 100px;
+            min-width:50px;
+            border-radius: 100px 0px 0px 100px;
+            border-top: rgb(32, 84, 175) solid 5px;
+            border-left: rgba(32, 84, 175) solid 5px;
+            border-bottom: rgba(32, 84, 175) solid 5px;
+          }
+          .dh{
+            text-align: center;
+            margin-top: 40px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 30px;
+            font-weight: 600;
+          }
+          .scroll-container {
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap; /* Allow items to wrap onto the next line */
+        }
+        
+        div.scroll-container img {
+            width: 220px; /* Set a fixed width for all images */
+            height: 120px; /* Set a fixed height for all images */
+            object-fit: cover; /* Maintain aspect ratio and cover the container */
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.461) 0.5px 0.5px 12px;
+            margin: 10px; /* Adjust margin as needed */
+        }
+        
+        div.scroll-container img:hover {
+            transform: scale(1.1); /* Scale the section on hover */
+            z-index: 1; /* Bring the hovered section to the front */
+            cursor: pointer;
+            box-shadow: rgb(0, 106, 255) 0px 0px 10px;
+        }
+        .hr4 {
+            border: 0;
+            height: 5px;
+            background: linear-gradient(to right, transparent, #fff700, transparent);
+            margin: 0 auto; /* Center the horizontal line */
+            margin-top: 20px; /* Adjust the margin as needed */
+        }
+        .hr3 {
+            border: 0;
+            height: 5px;
+            background: linear-gradient(to right, transparent, #40ff00, transparent);
+            margin: 0 auto; /* Center the horizontal line */
+            margin-top: 20px; /* Adjust the margin as needed */
+        }
+        .hr1 {
+            border: 0;
+            height: 5px;
+            background: linear-gradient(to right, transparent, #00a6ff, transparent);
+            margin: 0 auto; /* Center the horizontal line */
+            margin-top: 20px; /* Adjust the margin as needed */
+        }
+        .hr2 {
+            border: 0;
+            height: 5px;
+            background: linear-gradient(to right, transparent, #02be85, transparent);
+            margin: 0 auto; /* Center the horizontal line */
+            margin-top: 20px; /* Adjust the margin as needed */
+        }
+        .scroll-container1 {
+          margin-top: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap; /* Allow items to wrap onto the next line */
+      }
+      
+      div.scroll-container1 img {
+          width: 350px; /* Set a fixed width for all images */
+          height: 250px; /* Set a fixed height for all images */
+          object-fit: cover; /* Maintain aspect ratio and cover the container */
+          padding: 10px;
+          border-radius: 20px;
+          box-shadow: rgba(0, 0, 0, 0.461) 0.5px 0.5px 12px;
+          margin: 20px; /* Adjust margin as needed */
+      }
+      
+      div.scroll-container1 img:hover {
+          transform: scale(1.1); /* Scale the section on hover */
+          z-index: 1; /* Bring the hovered section to the front */
+          cursor: pointer;
+          box-shadow: rgb(5, 197, 145) 0px 0px 10px;
+      }
+      .scroll-container2 {
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap; /* Allow items to wrap onto the next line */
+    }
+    
+    div.scroll-container2 img {
+        width: 200px; /* Set a fixed width for all images */
+        height: 200px; /* Set a fixed height for all images */
+        object-fit: cover; /* Maintain aspect ratio and cover the container */
+        padding: 10px;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.461) 0.5px 0.5px 12px;
+        margin: 20px; /* Adjust margin as needed */
+    }
+    
+    div.scroll-container2 img:hover {
+        transform: scale(1.1); /* Scale the section on hover */
+        z-index: 1; /* Bring the hovered section to the front */
+        cursor: pointer;
+        box-shadow: rgb(77, 222, 69) 0px 0px 10px;
+    }
+    .il{
+        text-align: center;
+        text-shadow: black 0px 0px 1px;
+        color: rgb(50, 158, 113);
+    }
+    </style>
+</head>
+<body>
+
+    <div class="top">
+        <div class="container-fluid">
+         <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <a class="navbar-brand" href="#">
+              <h2
+                style="
+                  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                  color: rgba(17, 76, 144, 0.694);
+                  font-weight:700;
+                "
+              >
+                &nbsp;&nbsp;&nbsp;Charan
+              </h2>
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto me-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="am.html"
+                    >&nbsp;&nbsp;&nbsp;About Me&nbsp;&nbsp;&nbsp;</a
+                  >
+                </li>
+              </ul>
+            </div>
+          
+         </nav>
+        </div>
+    </div>
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+  ></script>
+<div class="d0">
+ <div class="container">
+    <div class="left-half">
+        <h1 class="h1">I'm Charan Teja B S</h1>
+        <h2>An Aspiring Data Scientist....!</h2>
+    </div>
+    <div class="right-half">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjJxGLXG_vGFI3c8xhz2l6zt6XZ6X5XYxTGwdRVcqCayH-0ECusWz_u7ZCtOWajeAmR1YD0_XzEhfEq3bSZkjrl5zOH3140TX4TqwvX6k0teMa3SDkpYjP6N_TUHSOCpfT7xNbqNB9R4R84Uu-XM0MNdhyphenhyphenHMeFqY_qzVJ5PuIuJsHD2GM/s220/dp.jpg" alt="Photo" class="profile-photo">
+    </div>
+ </div>
+ <div class="ab">
+    <h3 class="abh">Aspiring Data Scientist | Python Enthusiast 🐍 | Unleashing the Power of Code to Decode the World of Data Science! 🌐</h3>
+ </div>
+ <div class="d1">
+   <hr class="hr1">
+   <br />
+   <div class="deco1">
+    <h1>&nbsp</h1>
+   </div>
+   <div class="deco2">
+    <h1>&nbsp</h1>
+   </div>
+   <div class="ms">
+    <h1 class="dh">⭐My Skills⭐</h1>
+   </div>
+  <br />
+   <div class="scroll-container">
+
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMH-64TSRhlD0Qhwwif_tsUDeF51wmD4Swng&usqp=CAU"
+      class="img1"
+    />
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtxHM9kQYkJBqwFt2OY5a5YAIGYR31JEEAmg&usqp=CAU"
+      class="img1"
+    />
+    <img
+      src="https://img.freepik.com/free-vector/sphere-grid-wave-with-binary-code-ai-artificial-intelligence-logo-hand-machine-learning-concept_127544-855.jpg"
+      class="img1"
+    />
+    <img
+      src="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2021/12/c-programming-language.jpg"
+      class="img1"
+    />
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmIfJSTJRWr5kkvPXUbo-ziBwEgK9zzV2q2g&usqp=CAU"
+      class="img1"
+    />
+  </div>
+<hr class="hr2">
+</div>
+<div class="d2">
+<br />
+<div class="deco12">
+    <h1>&nbsp</h1>
+</div>
+<div class="deco22">
+    <h1>&nbsp</h1>
+</div>
+<div class="mc">
+    <h1 class="dh">⭐My Certificates⭐</h1>
+</div>
+<br />
+<div class="scroll-container1">
+    <img
+      src="https://coursera-certificate-images.s3.amazonaws.com/5PHJ64VJWW83"
+      class="img1"
+    />
+    <img
+      src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~HKSQASJE5P5Q/CERTIFICATE_LANDING_PAGE~HKSQASJE5P5Q.jpeg"
+      class="img1"
+    />
+    <img
+      src="https://coursera-certificate-images.s3.amazonaws.com/QGXWNH6ZY4AQ"
+      class="img1"
+    />
+    <img
+      src="https://coursera-certificate-images.s3.amazonaws.com/48LMF5MK9MT5"
+      class="img1"
+    />
+</div>
+  <hr class="hr1">
+</div>
+<div class="d3">
+  <br />
+  <div class="deco1">
+    <h1>&nbsp</h1>
+  </div>
+  <div class="deco2">
+    <h1>&nbsp</h1>
+  </div>
+  <div class="mc">
+    <h1 class="dh">⭐My Projects⭐</h1>
+  </div>
+  <br />
+  <div class="scroll-container2">
+    <a href="https://charantejabs6.github.io/weather/">
+    <img
+      src="https://th.bing.com/th/id/OIG.G3qGwy_v7wGtSERMUenL?w=270&h=270&c=6&r=0&o=5&dpr=3&pid=ImgGn"
+      class="img1"
+    /><h2 class="il">Weather</h2></a>
+    <a href="https://charantejabs6.github.io/TIC_TAC_TOE/">
+    <img
+      src="https://th.bing.com/th/id/OIG.zJ05m0QYKeMcsmNLFClU?w=270&h=270&c=6&r=0&o=5&dpr=3&pid=ImgGn"
+      class="img1"
+    /><h2 class="il">TicTacToe</h2></a>
+    <a href="https://www.coursera.org/learn/python-project-for-data-science/home/welcome">
+    <img
+      src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/0f/7e7a69e7d444ed965200ac45f0bd6e/Final-Data-Science.jpg"
+      class="img1"
+    /><h2 class="il">DataScience</h2></a>
+  </div>
+</div>
+<hr class="hr4">
+<footer style="background-color: #ffea0071; color: #000000; text-align: center; padding: 20px; position:relative; bottom: 0; width: 100%; border-radius:1000px 1000px 0px 0px;border:#fffb01 solid 2px;">
+    <p>&copy; 2023 <strong>My_Portfolio</strong>. All Rights Reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
